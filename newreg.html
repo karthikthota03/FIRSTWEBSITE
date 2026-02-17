@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+    function validateform(){
+        const name =document.getElementById("name").value;
+        const email=document.getElementById("email").value;
+        const password=document.getElementById("password").value;
+        const repassword=document.getElementById("repassword").value;
+        const phno=document.getElementById("phno").value;
+
+
+        if(/\d/.test(name)){
+            console.log("Username Must Be Contains Only Alphabets");
+            alert("Username Must Be Contains Only Alphabets");
+        return false;
+        }
+        if(password!=repassword){
+             console.log("Passwords do not match. Please re-enter the same password.");
+            alert("Passwords do not match. Please re-enter the same password.")
+        return false;
+        }
+        if(!/^\d{10}$/.test(phno)){
+            console.log("Mobile Number Must Be Contains Only 10 Numerical Digits");
+            alert("Mobile Number Must Be Contains Only 10 Numerical Digits");
+        return false;
+        }
+        alert("Registration successful! Your account has been created.");
+    return true;
+    }
+</script>
+</head>
+
+
+<body>
+
+<div class="HED">
+    <div class="HED-left">
+        <img src="images/log.png" alt="Logo">
+        <h4>KN Analysis Pvt Limited</h4>
+    </div>
+     <div class="nav">
+        <a href="main.html">Home</a>
+        <a href="welcomeuser.html">Markets</a>
+        <a href="research.html">Research</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Sign in</a>
+     </div>
+</div>
+
+              <div class="main">         
+                  <div class="loginbox">
+        <h6 style="opacity: 0.7;">Welcome User</h6>
+        <h1>Create New Account</h1>
+<form onsubmit="return validateform()" action="main.html">
+        <input type="text"  id="name" placeholder="Enter Full Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+         <input type="text" id="phno" name="phno" placeholder="Mobile number"required >
+         <input type="password" id="password" placeholder="Create New Password" required>
+         <input type="password" id="repassword" name="repassword" placeholder="Re-enter Password"required >
+         
+
+        <a href="login.html">Already registered? Sign in</a>
+       
+       
+        <button type="submit" >Submit </button>
+        </form>
+       
+        
+        
+    </div>
+</div>
+
+</div>
+
+<div class="disclaimer">
+    <p>
+        <strong>Disclaimer:</strong>
+        The information provided on this website is for educational and informational purposes only and should not be considered financial or investment advice. Stock market investments are subject to risk. Please consult a qualified financial advisor before making any investment decisions.
+    </p>
+</div>
+
+<footer class="FOOT">
+    <h6>© 2026 KN Analysis Pvt Limited. All Rights Reserved. SEBI Registration No: 156798 | Market risks apply.</h6>
+</footer>
+
+</body>
+</html>
